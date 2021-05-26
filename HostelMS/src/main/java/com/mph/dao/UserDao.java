@@ -13,4 +13,6 @@ public interface UserDao {
 	public List<User> updateUser(User user);
 	public List<User> deleteUser(int user_id);
 	public User searchUser(int user_id);
+	public User getUserEmail(String email_id,String password);
+	public User getUserById(int user_id);
 }

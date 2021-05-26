@@ -38,7 +38,7 @@ public class StaffDaoImpl implements  StaffDao{
 	@Override
 	public Staff getStaff(Staff staff) {
 		Criteria c=getSession().createCriteria(Staff.class);
-		c.add(Restrictions.eq("staff_id",staff.getStaff_id()));
+		c.add(Restrictions.eq("user_id",staff.getUser_id()));
 		Staff st=(Staff) c.uniqueResult();
 		return st;
 	}
@@ -46,9 +46,9 @@ public class StaffDaoImpl implements  StaffDao{
 	@Override
 	public List<Staff> updateStaff(Staff staff) {
 		System.out.println("from dao user " + staff);
-		Query query = getSession().createQuery("update STAFF_HMS staff set staff_name=:staff_name,addressLine1=:addressLine1,addressLine2=:addressLine2,city=:city,state=:state,country=:country,zipCode=:zipCode,phone_number=:phone_number,email_id=:email_id,password=:password,gender=:gender,date_of_birth=:date_of_birth where staff_id=:staff_id");
-		query.setParameter("staff_id",staff.getStaff_id());
-		query.setParameter("staff_name",staff.getStaff_name());
+		Query query = getSession().createQuery("update STAFF_HMS staff set user_name=:user_name,addressLine1=:addressLine1,addressLine2=:addressLine2,city=:city,state=:state,country=:country,zipCode=:zipCode,phone_number=:phone_number,email_id=:email_id,password=:password,gender=:gender,date_of_birth=:date_of_birth where user_id=:user_id");
+		query.setParameter("user_id",staff.getUser_id());
+		query.setParameter("user_name",staff.getUser_name());
 		query.setParameter("addressLine1",staff.getAddress().getAddressLine1());
 		query.setParameter("addressLine2",staff.getAddress().getAddressLine2());
 		query.setParameter("city",staff.getAddress().getCity());
@@ -71,9 +71,9 @@ public class StaffDaoImpl implements  StaffDao{
 	}
 
 	@Override
-	public List<Staff> deleteStaff(int staff_id) {
-		Query query = getSession().createQuery("delete STAFF_HMS staff where staff_id=:staff_id");
-		query.setParameter("staff_id",staff_id);
+	public List<Staff> deleteStaff(int user_id) {
+		Query query = getSession().createQuery("delete STAFF_HMS staff where user_id=:user_id ");
+		query.setParameter("user_id",user_id);
 		int noofrows=query.executeUpdate();
 		if(noofrows>0)
 		{
@@ -84,9 +84,17 @@ public class StaffDaoImpl implements  StaffDao{
 	}
 
 	@Override
-	public Staff searchStaff(int staff_id) {
+	public Staff searchStaff(int user_id) {
 		Criteria c=getSession().createCriteria(Staff.class);
-		c.add(Restrictions.eq("staff_id",staff_id));
+		c.add(Restrictions.eq("user_id",user_id));
+		Staff staff=(Staff) c.uniqueResult();
+		return staff;
+	}
+
+	@Override
+	public Staff getStaffById(int user_id) {
+		Criteria c=getSession().createCriteria(Staff.class);
+		c.add(Restrictions.eq("user_id",user_id));
 		Staff staff=(Staff) c.uniqueResult();
 		return staff;
 	}

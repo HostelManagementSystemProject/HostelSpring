@@ -79,5 +79,8 @@
     <bean id="complaintsService" class="com.mph.service.ComplaintsServiceImpl"></bean>
     <bean id="adminService" class="com.mph.service.AdminServiceImpl"></bean>
     <bean id="staffService" class="com.mph.service.StaffServiceImpl"></bean>
+    <bean id="userDao" class="com.mph.dao.UserDaoImpl"></bean>
+    <bean id="adminDao" class="com.mph.dao.AdminDaoImpl"></bean>
+    <bean id="residentService" class="com.mph.service.ResidentServiceImpl"></bean>
     
 </beans>

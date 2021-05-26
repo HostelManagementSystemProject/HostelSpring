@@ -14,7 +14,8 @@ import com.mph.entity.Room;
 
 @Repository
 public class RoomDaoImpl implements RoomDao {
-
+	
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -76,6 +77,13 @@ public class RoomDaoImpl implements RoomDao {
 	}
 	@Override
 	public Room searchRoom(int room_no) {
+		Criteria c=getSession().createCriteria(Room.class);
+		c.add(Restrictions.eq("room_no",room_no));
+		Room room=(Room) c.uniqueResult();
+		return room;
+	}
+	@Override
+	public Room getRoomById(int room_no) {
 		Criteria c=getSession().createCriteria(Room.class);
 		c.add(Restrictions.eq("room_no",room_no));
 		Room room=(Room) c.uniqueResult();

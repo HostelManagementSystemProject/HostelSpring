@@ -46,4 +46,9 @@ public class RoomServiceImpl implements RoomService{
 	public Room searchRoom(int room_id) {
 		return roomDao.searchRoom(room_id);
 	}
+
+	@Override
+	public Room getRoomById(int room_id) {
+		return roomDao.getRoomById(room_id);
+	}
 }

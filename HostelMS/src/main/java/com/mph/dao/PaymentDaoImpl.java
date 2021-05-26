@@ -48,11 +48,12 @@ public class PaymentDaoImpl implements PaymentDao{
 	@Override
 	public List<Payment> updatePayment(Payment payment) {
 		System.out.println("from dao");
-		Query query = getSession().createQuery("update PAYMENT_HMS set due_date=:due_date,date_of_payment=:date_of_payment,receipt_no=:receipt_no where payment_id=:payment_id");
+		Query query = getSession().createQuery("update PAYMENT_HMS set due_date=:due_date,date_of_payment=:date_of_payment,receipt_no=:receipt_no,amount=:amount where payment_id=:payment_id");
 		query.setParameter("payment_id",payment.getPayment_id());
 		query.setParameter("due_date",payment.getDue_date());
 		query.setParameter("date_of_payment",payment.getDate_of_payment());
 		query.setParameter("receipt_no",payment.getReceipt_no());
+		query.setParameter("amount",payment.getAmount());
 		int noofrows=query.executeUpdate();
 		if(noofrows>0)
 		{

@@ -81,4 +81,12 @@ public class ComplaintsDaoImpl implements ComplaintsDao{
 		return complaint;
 	}
 
+	@Override
+	public Complaints getComplaintById(int complaint_id) {
+		Criteria c=getSession().createCriteria(Complaints.class);
+		c.add(Restrictions.eq("complaint_id",complaint_id));
+		Complaints complaint=(Complaints) c.uniqueResult();
+		return complaint;
+	}
+
 }

@@ -47,4 +47,14 @@ public class UserServiceImpl implements UserService{
 		return userDao.searchUser(user_id);
 	}
 
+	@Override
+	public User getUserEmail(String email_id, String password) {
+		return userDao.getUserEmail(email_id, password);
+	}
+
+	@Override
+	public User getUserById(int user_id) {
+		return userDao.getUserById(user_id);
+	}
+
 }

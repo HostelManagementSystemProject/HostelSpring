@@ -5,12 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mph.entity.Staff;
@@ -19,6 +22,8 @@ import com.mph.service.StaffService;
 import com.mph.service.UserService;
 
 @RestController
+@RequestMapping("/staff")
+@CrossOrigin(origins = "http://localhost:4200",allowCredentials = "false",methods = {RequestMethod.GET, RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE}, allowedHeaders = "*")
 public class StaffRestController {
 	@Autowired
 	StaffService staffService;
@@ -73,8 +78,16 @@ public class StaffRestController {
 	}
 	
 	@GetMapping("/searchstaff/{id}")
-	public ResponseEntity<Staff> getBooking(@PathVariable("id") int staff_id) {
+	public ResponseEntity<Staff> getStaff(@PathVariable("id") int staff_id) {
 		Staff staff=staffService.searchStaff(staff_id);
+		System.out.println("Staff : " + staff);
+		return new ResponseEntity<Staff>(staff, HttpStatus.OK);
+
+	}
+	
+	@GetMapping("/getstaffbyid/{id}")
+	public ResponseEntity<Staff> getStaffById(@PathVariable("id") int staff_id) {
+		Staff staff=staffService.getStaffById(staff_id);
 		System.out.println("Staff : " + staff);
 		return new ResponseEntity<Staff>(staff, HttpStatus.OK);
 

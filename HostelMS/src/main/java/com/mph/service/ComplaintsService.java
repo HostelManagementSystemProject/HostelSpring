@@ -11,4 +11,5 @@ public interface ComplaintsService {
 	public List<Complaints> updateComplaint(Complaints complaint);
 	public List<Complaints> deleteComplaint(int complaint_id);
 	public Complaints searchComplaint(int complaint_id);
+	public Complaints getComplaintById(int complaint_id);
 }

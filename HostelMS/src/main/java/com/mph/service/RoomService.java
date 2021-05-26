@@ -11,4 +11,5 @@ public interface RoomService {
 	public List<Room> updateRoom(Room room);
 	public List<Room> deleteRoom(int room_id);
 	public Room searchRoom(int room_id);
+	public Room getRoomById(int room_id);
 }

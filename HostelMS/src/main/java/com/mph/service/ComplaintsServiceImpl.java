@@ -51,4 +51,9 @@ public class ComplaintsServiceImpl implements ComplaintsService{
 		return complaintsDao.searchComplaint(complaint_id);
 	}
 
+	@Override
+	public Complaints getComplaintById(int complaint_id) {
+		return complaintsDao.getComplaintById(complaint_id);
+	}
+
 }

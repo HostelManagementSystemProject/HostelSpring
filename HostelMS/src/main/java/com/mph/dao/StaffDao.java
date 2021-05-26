@@ -11,4 +11,5 @@ public interface StaffDao {
 	public List<Staff> updateStaff(Staff staff);
 	public List<Staff> deleteStaff(int staff_id);
 	public Staff searchStaff(int staff_id);
+	public Staff getStaffById(int staff_id);
 }

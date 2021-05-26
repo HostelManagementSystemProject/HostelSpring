@@ -26,14 +26,16 @@ public class BookingDaoImpl implements BookingDao{
 	public void createBooking(Booking booking) {
 		getSession().saveOrUpdate(booking);
 		System.out.println("Booking Done!!");
+		System.out.println(booking);
 		
 	}	
 
 	@Override
 	public List<Booking> getBookingList() {
 		Query query = getSession().createQuery("select bookings from BOOKING_HMS bookings");
+		List<Booking> bookinglist=query.list();
+        return bookinglist;
 		
-		return query.list();
 	}
 
 	@Override
@@ -58,12 +60,12 @@ public class BookingDaoImpl implements BookingDao{
 	@Override
 	public List<Booking> updateBooking(Booking booking) {
 		System.out.println("updating value"+booking);
-		Query query = getSession().createQuery("update BOOKING_HMS set booking_date=:booking_date,check_in=:check_in,check_out=:check_out,room_no=:room_no where booking_id=:booking_id");
+		Query query = getSession().createQuery("update BOOKING_HMS set booking_date=:booking_date,check_in=:check_in,check_out=:check_out,user_name=:user_name where booking_id=:booking_id");
 		query.setParameter("booking_id",booking.getBooking_id());
 		query.setParameter("booking_date",booking.getBooking_date());
 		query.setParameter("check_in",booking.getCheck_in());
 		query.setParameter("check_out",booking.getCheck_out());
-		query.setParameter("room_no",booking.getRoom_no());
+		query.setParameter("user_name",booking.getUser());
 		int noofrows=query.executeUpdate();
 		if(noofrows>0)
 		{

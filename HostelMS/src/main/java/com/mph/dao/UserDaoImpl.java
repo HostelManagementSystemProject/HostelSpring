@@ -93,4 +93,23 @@ public class UserDaoImpl implements UserDao{
 		return user;
 	}
 
+
+	@Override
+	public User getUserEmail(String email_id,String password) {
+		Criteria c=getSession().createCriteria(User.class);
+		c.add(Restrictions.eq("email_id",email_id));
+		c.add(Restrictions.eq("password",password));
+		User users=(User) c.uniqueResult();
+		return users;
+	}
+
+
+	@Override
+	public User getUserById(int user_id) {
+		Criteria c=getSession().createCriteria(User.class);
+		c.add(Restrictions.eq("user_id",user_id));
+		User user=(User) c.uniqueResult();
+		return user;
+	}
+
 }
