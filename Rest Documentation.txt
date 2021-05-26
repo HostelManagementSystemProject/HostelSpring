@@ -1,0 +1,4035 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Api Documentation",
+    "version": "1.0",
+    "title": "Api Documentation",
+    "termsOfService": "urn:tos",
+    "contact": {},
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "host": "localhost:8080",
+  "tags": [
+    {
+      "name": "admin-rest-controller",
+      "description": "Admin Rest Controller"
+    },
+    {
+      "name": "booking-rest-controller",
+      "description": "Booking Rest Controller"
+    },
+    {
+      "name": "complaints-rest-controller",
+      "description": "Complaints Rest Controller"
+    },
+    {
+      "name": "hostel-controller",
+      "description": "Hostel Controller"
+    },
+    {
+      "name": "hostel-rest-controller",
+      "description": "Hostel Rest Controller"
+    },
+    {
+      "name": "payment-controller",
+      "description": "Payment Controller"
+    },
+    {
+      "name": "payment-rest-controller",
+      "description": "Payment Rest Controller"
+    },
+    {
+      "name": "resident-rest-controller",
+      "description": "Resident Rest Controller"
+    },
+    {
+      "name": "room-rest-controller",
+      "description": "Room Rest Controller"
+    },
+    {
+      "name": "staff-rest-controller",
+      "description": "Staff Rest Controller"
+    },
+    {
+      "name": "user-rest-controller",
+      "description": "User Rest Controller"
+    }
+  ],
+  "paths": {
+    "/HostelMS/addhostel": {
+      "get": {
+        "tags": [
+          "hostel-controller"
+        ],
+        "summary": "add",
+        "operationId": "addUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "hostel-controller"
+        ],
+        "summary": "create",
+        "operationId": "createUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "txtaddress",
+            "in": "query",
+            "description": "txtaddress",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "txthid",
+            "in": "query",
+            "description": "txthid",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "txthname",
+            "in": "query",
+            "description": "txthname",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "txtphone",
+            "in": "query",
+            "description": "txtphone",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/addpayment": {
+      "get": {
+        "tags": [
+          "payment-controller"
+        ],
+        "summary": "add",
+        "operationId": "addUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "payment-controller"
+        ],
+        "summary": "create",
+        "operationId": "createUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "txtdate",
+            "in": "query",
+            "description": "txtdate",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "txtdue",
+            "in": "query",
+            "description": "txtdue",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "txtpid",
+            "in": "query",
+            "description": "txtpid",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "txtrno",
+            "in": "query",
+            "description": "txtrno",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/admin/alladmins": {
+      "get": {
+        "tags": [
+          "admin-rest-controller"
+        ],
+        "summary": "allAdmins",
+        "operationId": "allAdminsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Admin"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/admin/createadmin": {
+      "post": {
+        "tags": [
+          "admin-rest-controller"
+        ],
+        "summary": "createAdmin",
+        "operationId": "createAdminUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "admin",
+            "description": "admin",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/admin/deleteadmin/{txtcid}": {
+      "delete": {
+        "tags": [
+          "admin-rest-controller"
+        ],
+        "summary": "deleteComplaint",
+        "operationId": "deleteComplaintUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "txtcid",
+            "in": "path",
+            "description": "txtcid",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Admin"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/HostelMS/admin/searchadmin/{id}": {
+      "get": {
+        "tags": [
+          "admin-rest-controller"
+        ],
+        "summary": "getAdmin",
+        "operationId": "getAdminUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/admin/updateadmin": {
+      "put": {
+        "tags": [
+          "admin-rest-controller"
+        ],
+        "summary": "updateAdmin",
+        "operationId": "updateAdminUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "admin",
+            "description": "admin",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Admin"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/booking/allbookings": {
+      "get": {
+        "tags": [
+          "booking-rest-controller"
+        ],
+        "summary": "allBooking",
+        "operationId": "allBookingUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BookingRes"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/booking/createbooking": {
+      "post": {
+        "tags": [
+          "booking-rest-controller"
+        ],
+        "summary": "createBooking",
+        "operationId": "createBookingUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "booking",
+            "description": "booking",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BookingReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BookingRes"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/booking/deletebooking/{id}": {
+      "delete": {
+        "tags": [
+          "booking-rest-controller"
+        ],
+        "summary": "deleteBooking",
+        "operationId": "deleteBookingUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BookingRes"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/HostelMS/booking/searchbooking/{id}": {
+      "get": {
+        "tags": [
+          "booking-rest-controller"
+        ],
+        "summary": "getBooking",
+        "operationId": "getBookingUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BookingRes"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/booking/updatebooking": {
+      "put": {
+        "tags": [
+          "booking-rest-controller"
+        ],
+        "summary": "updateBooking",
+        "operationId": "updateBookingUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "booking",
+            "description": "booking",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BookingReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BookingRes"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/complaints/allcomplaints": {
+      "get": {
+        "tags": [
+          "complaints-rest-controller"
+        ],
+        "summary": "allComplaints",
+        "operationId": "allComplaintsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Complaints"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/complaints/createcomplaint": {
+      "post": {
+        "tags": [
+          "complaints-rest-controller"
+        ],
+        "summary": "createEmployee",
+        "operationId": "createEmployeeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "complaint",
+            "description": "complaint",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Complaints"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Complaints"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/complaints/deletecomplaint/{txtcid}": {
+      "delete": {
+        "tags": [
+          "complaints-rest-controller"
+        ],
+        "summary": "deleteComplaint",
+        "operationId": "deleteComplaintUsingDELETE_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "txtcid",
+            "in": "path",
+            "description": "txtcid",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Complaints"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/HostelMS/complaints/getcomplaintbyid/{id}": {
+      "get": {
+        "tags": [
+          "complaints-rest-controller"
+        ],
+        "summary": "getComplaintById",
+        "operationId": "getComplaintByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Complaints"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/complaints/searchcomplaint/{id}": {
+      "get": {
+        "tags": [
+          "complaints-rest-controller"
+        ],
+        "summary": "getComplaint",
+        "operationId": "getComplaintUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Complaints"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/complaints/updatecomplaint": {
+      "put": {
+        "tags": [
+          "complaints-rest-controller"
+        ],
+        "summary": "updateComplaint",
+        "operationId": "updateComplaintUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "complaint",
+            "description": "complaint",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Complaints"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Complaints"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/delete": {
+      "get": {
+        "tags": [
+          "hostel-controller"
+        ],
+        "summary": "delete",
+        "operationId": "deleteUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "hostel_address",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "hostel_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "hostel_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "phone_number",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/deletepayment": {
+      "get": {
+        "tags": [
+          "payment-controller"
+        ],
+        "summary": "delete",
+        "operationId": "deleteUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "amount",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "format": "float"
+          },
+          {
+            "name": "booking.booking_date",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.booking_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.check_in",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.check_out",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.user.address.addressLine1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.addressLine2",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.city",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.country",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.state",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.zipCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.date_of_birth",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.user.email_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.gender",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.phone_number",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "booking.user.room.room_no",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.room.room_type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.room.total_rooms",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.room.vacancy",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.user_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.user_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date_of_payment",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "due_date",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "payment_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "receipt_no",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.address.addressLine1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.addressLine2",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.city",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.country",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.state",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.zipCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.date_of_birth",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "user.email_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.gender",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.phone_number",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "user.room.room_no",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.room.room_type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.room.total_rooms",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.room.vacancy",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.user_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.user_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/edithostel": {
+      "get": {
+        "tags": [
+          "hostel-controller"
+        ],
+        "summary": "edit",
+        "operationId": "editUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "hostel_address",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "hostel_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "hostel_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "phone_number",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/editpayment": {
+      "get": {
+        "tags": [
+          "payment-controller"
+        ],
+        "summary": "edit",
+        "operationId": "editUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "amount",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "format": "float"
+          },
+          {
+            "name": "booking.booking_date",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.booking_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.check_in",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.check_out",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.user.address.addressLine1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.addressLine2",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.city",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.country",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.state",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.zipCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.date_of_birth",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.user.email_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.gender",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.phone_number",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "booking.user.room.room_no",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.room.room_type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.room.total_rooms",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.room.vacancy",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.user_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.user_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date_of_payment",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "due_date",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "payment_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "receipt_no",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.address.addressLine1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.addressLine2",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.city",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.country",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.state",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.zipCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.date_of_birth",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "user.email_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.gender",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.phone_number",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "user.room.room_no",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.room.room_type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.room.total_rooms",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.room.vacancy",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.user_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.user_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/hostel/allhostels": {
+      "get": {
+        "tags": [
+          "hostel-rest-controller"
+        ],
+        "summary": "allHostels",
+        "operationId": "allHostelsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Hostel"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/hostel/createhostel": {
+      "post": {
+        "tags": [
+          "hostel-rest-controller"
+        ],
+        "summary": "createHostel",
+        "operationId": "createHostelUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "hostel",
+            "description": "hostel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Hostel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Hostel"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/hostel/deletehostel/{txtcid}": {
+      "delete": {
+        "tags": [
+          "hostel-rest-controller"
+        ],
+        "summary": "deleteHostel",
+        "operationId": "deleteHostelUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "txtcid",
+            "in": "path",
+            "description": "txtcid",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Hostel"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/HostelMS/hostel/searchhostel/{id}": {
+      "get": {
+        "tags": [
+          "hostel-rest-controller"
+        ],
+        "summary": "getHostel",
+        "operationId": "getHostelUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Hostel"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/hostel/updatehostel": {
+      "put": {
+        "tags": [
+          "hostel-rest-controller"
+        ],
+        "summary": "updateHostel",
+        "operationId": "updateHostelUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "hostel",
+            "description": "hostel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Hostel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Hostel"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/payment/allpayments": {
+      "get": {
+        "tags": [
+          "payment-rest-controller"
+        ],
+        "summary": "allPayments",
+        "operationId": "allPaymentsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PaymentRes"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/payment/createpayment": {
+      "post": {
+        "tags": [
+          "payment-rest-controller"
+        ],
+        "summary": "createPayment",
+        "operationId": "createPaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "payment",
+            "description": "payment",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PaymentReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PaymentRes"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/payment/deletepayment/{txtcid}": {
+      "delete": {
+        "tags": [
+          "payment-rest-controller"
+        ],
+        "summary": "deletePayment",
+        "operationId": "deletePaymentUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "txtcid",
+            "in": "path",
+            "description": "txtcid",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PaymentRes"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/HostelMS/payment/searchpayment/{id}": {
+      "get": {
+        "tags": [
+          "payment-rest-controller"
+        ],
+        "summary": "getPayment",
+        "operationId": "getPaymentUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PaymentRes"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/payment/updatepayment": {
+      "put": {
+        "tags": [
+          "payment-rest-controller"
+        ],
+        "summary": "updatePayment",
+        "operationId": "updatePaymentUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "payment",
+            "description": "payment",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PaymentReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PaymentRes"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/resident/allresidents": {
+      "get": {
+        "tags": [
+          "resident-rest-controller"
+        ],
+        "summary": "allResident",
+        "operationId": "allResidentUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Resident"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/resident/createresident": {
+      "post": {
+        "tags": [
+          "resident-rest-controller"
+        ],
+        "summary": "createResident",
+        "operationId": "createResidentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "resident",
+            "description": "resident",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Resident"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Resident"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/resident/deleteresident/{id}": {
+      "delete": {
+        "tags": [
+          "resident-rest-controller"
+        ],
+        "summary": "deleteResident",
+        "operationId": "deleteResidentUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Resident"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/HostelMS/resident/getresidentbyid/{id}": {
+      "get": {
+        "tags": [
+          "resident-rest-controller"
+        ],
+        "summary": "getResidentById",
+        "operationId": "getResidentByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Resident"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/resident/residentdetails/{email}/{password}": {
+      "get": {
+        "tags": [
+          "resident-rest-controller"
+        ],
+        "summary": "getResident",
+        "operationId": "getResidentUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "path",
+            "description": "password",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Resident"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/resident/searchresident/{id}": {
+      "get": {
+        "tags": [
+          "resident-rest-controller"
+        ],
+        "summary": "getResident",
+        "operationId": "getResidentUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Resident"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/resident/updateresident": {
+      "put": {
+        "tags": [
+          "resident-rest-controller"
+        ],
+        "summary": "updateResident",
+        "operationId": "updateResidentUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "resident",
+            "description": "resident",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Resident"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Resident"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/room/addroom": {
+      "post": {
+        "tags": [
+          "room-rest-controller"
+        ],
+        "summary": "addRoom",
+        "operationId": "addRoomUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "room",
+            "description": "room",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Room"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Room"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/room/allrooms": {
+      "get": {
+        "tags": [
+          "room-rest-controller"
+        ],
+        "summary": "allRooms",
+        "operationId": "allRoomsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Room"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/room/deleteroom/{id}": {
+      "delete": {
+        "tags": [
+          "room-rest-controller"
+        ],
+        "summary": "deleteRoom",
+        "operationId": "deleteRoomUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Room"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/HostelMS/room/getroombyid/{id}": {
+      "get": {
+        "tags": [
+          "room-rest-controller"
+        ],
+        "summary": "getRoomById",
+        "operationId": "getRoomByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Room"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/room/searchroom/{id}": {
+      "get": {
+        "tags": [
+          "room-rest-controller"
+        ],
+        "summary": "searchRoom",
+        "operationId": "searchRoomUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Room"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/room/updateroom": {
+      "put": {
+        "tags": [
+          "room-rest-controller"
+        ],
+        "summary": "updateRoom",
+        "operationId": "updateRoomUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "room",
+            "description": "room",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Room"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Room"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/signup": {
+      "get": {
+        "tags": [
+          "hostel-controller"
+        ],
+        "summary": "signup",
+        "operationId": "signupUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "txthid",
+            "in": "query",
+            "description": "txthid",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/signuppayment": {
+      "get": {
+        "tags": [
+          "payment-controller"
+        ],
+        "summary": "signuppayment",
+        "operationId": "signuppaymentUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "txtpid",
+            "in": "query",
+            "description": "txtpid",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/staff/allstaff": {
+      "get": {
+        "tags": [
+          "staff-rest-controller"
+        ],
+        "summary": "allStaff",
+        "operationId": "allStaffUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Staff"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/staff/createstaff": {
+      "post": {
+        "tags": [
+          "staff-rest-controller"
+        ],
+        "summary": "createStaff",
+        "operationId": "createStaffUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "staff",
+            "description": "staff",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/staff/deletestaff/{id}": {
+      "delete": {
+        "tags": [
+          "staff-rest-controller"
+        ],
+        "summary": "deleteStaff",
+        "operationId": "deleteStaffUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Staff"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/HostelMS/staff/getstaffbyid/{id}": {
+      "get": {
+        "tags": [
+          "staff-rest-controller"
+        ],
+        "summary": "getStaffById",
+        "operationId": "getStaffByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/staff/searchstaff/{id}": {
+      "get": {
+        "tags": [
+          "staff-rest-controller"
+        ],
+        "summary": "getStaff",
+        "operationId": "getStaffUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/staff/updatestaff": {
+      "put": {
+        "tags": [
+          "staff-rest-controller"
+        ],
+        "summary": "updateStaff",
+        "operationId": "updateStaffUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "staff",
+            "description": "staff",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Staff"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/update": {
+      "get": {
+        "tags": [
+          "hostel-controller"
+        ],
+        "summary": "update",
+        "operationId": "updateUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "hostel_address",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "hostel_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "hostel_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "phone_number",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/updatepayment": {
+      "get": {
+        "tags": [
+          "payment-controller"
+        ],
+        "summary": "update",
+        "operationId": "updateUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "amount",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "format": "float"
+          },
+          {
+            "name": "booking.booking_date",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.booking_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.check_in",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.check_out",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.user.address.addressLine1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.addressLine2",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.city",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.country",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.state",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.address.zipCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.date_of_birth",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "booking.user.email_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.gender",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.phone_number",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "booking.user.room.room_no",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.room.room_type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "booking.user.room.total_rooms",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.room.vacancy",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.user_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "booking.user.user_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date_of_payment",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "due_date",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "payment_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "receipt_no",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.address.addressLine1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.addressLine2",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.city",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.country",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.state",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.address.zipCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.date_of_birth",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "user.email_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.gender",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.phone_number",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "user.room.room_no",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.room.room_type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user.room.total_rooms",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.room.vacancy",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.user_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "user.user_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ModelAndView"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/user/allusers": {
+      "get": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "allUser",
+        "operationId": "allUserUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/user/createuser": {
+      "post": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "createUser",
+        "operationId": "createUserUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "user",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/user/deleteuser/{id}": {
+      "delete": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "deleteEmployee",
+        "operationId": "deleteEmployeeUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/HostelMS/user/getuserbyid/{id}": {
+      "get": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "getUserById",
+        "operationId": "getUserByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/user/searchuser/{id}": {
+      "get": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "getUser",
+        "operationId": "getUserUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/user/updateuser": {
+      "put": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "updateEmployee",
+        "operationId": "updateEmployeeUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "user",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/HostelMS/user/userdetails/{email}/{password}": {
+      "get": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "getUser",
+        "operationId": "getUserUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "path",
+            "description": "password",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Address": {
+      "type": "object",
+      "properties": {
+        "addressLine1": {
+          "type": "string"
+        },
+        "addressLine2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        }
+      },
+      "title": "Address"
+    },
+    "Admin": {
+      "type": "object",
+      "properties": {
+        "admin_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "email_id": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Admin"
+    },
+    "BookingReq": {
+      "type": "object",
+      "properties": {
+        "booking_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "booking_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "check_in": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "check_out": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        },
+        "user_name": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "title": "BookingReq"
+    },
+    "BookingRes": {
+      "type": "object",
+      "properties": {
+        "booking_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "booking_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "check_in": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "check_out": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "title": "BookingRes"
+    },
+    "Complaints": {
+      "type": "object",
+      "properties": {
+        "complaint_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "complaint_name": {
+          "type": "string"
+        },
+        "particulars": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "Complaints"
+    },
+    "Hostel": {
+      "type": "object",
+      "properties": {
+        "hostel_address": {
+          "type": "string"
+        },
+        "hostel_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hostel_name": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Hostel"
+    },
+    "ModelAndView": {
+      "type": "object",
+      "properties": {
+        "empty": {
+          "type": "boolean"
+        },
+        "model": {
+          "type": "object"
+        },
+        "modelMap": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "reference": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACCEPTED",
+            "ALREADY_REPORTED",
+            "BAD_GATEWAY",
+            "BAD_REQUEST",
+            "BANDWIDTH_LIMIT_EXCEEDED",
+            "CHECKPOINT",
+            "CONFLICT",
+            "CONTINUE",
+            "CREATED",
+            "DESTINATION_LOCKED",
+            "EXPECTATION_FAILED",
+            "FAILED_DEPENDENCY",
+            "FORBIDDEN",
+            "FOUND",
+            "GATEWAY_TIMEOUT",
+            "GONE",
+            "HTTP_VERSION_NOT_SUPPORTED",
+            "IM_USED",
+            "INSUFFICIENT_SPACE_ON_RESOURCE",
+            "INSUFFICIENT_STORAGE",
+            "INTERNAL_SERVER_ERROR",
+            "I_AM_A_TEAPOT",
+            "LENGTH_REQUIRED",
+            "LOCKED",
+            "LOOP_DETECTED",
+            "METHOD_FAILURE",
+            "METHOD_NOT_ALLOWED",
+            "MOVED_PERMANENTLY",
+            "MOVED_TEMPORARILY",
+            "MULTIPLE_CHOICES",
+            "MULTI_STATUS",
+            "NETWORK_AUTHENTICATION_REQUIRED",
+            "NON_AUTHORITATIVE_INFORMATION",
+            "NOT_ACCEPTABLE",
+            "NOT_EXTENDED",
+            "NOT_FOUND",
+            "NOT_IMPLEMENTED",
+            "NOT_MODIFIED",
+            "NO_CONTENT",
+            "OK",
+            "PARTIAL_CONTENT",
+            "PAYLOAD_TOO_LARGE",
+            "PAYMENT_REQUIRED",
+            "PERMANENT_REDIRECT",
+            "PRECONDITION_FAILED",
+            "PRECONDITION_REQUIRED",
+            "PROCESSING",
+            "PROXY_AUTHENTICATION_REQUIRED",
+            "REQUESTED_RANGE_NOT_SATISFIABLE",
+            "REQUEST_ENTITY_TOO_LARGE",
+            "REQUEST_HEADER_FIELDS_TOO_LARGE",
+            "REQUEST_TIMEOUT",
+            "REQUEST_URI_TOO_LONG",
+            "RESET_CONTENT",
+            "SEE_OTHER",
+            "SERVICE_UNAVAILABLE",
+            "SWITCHING_PROTOCOLS",
+            "TEMPORARY_REDIRECT",
+            "TOO_MANY_REQUESTS",
+            "UNAUTHORIZED",
+            "UNAVAILABLE_FOR_LEGAL_REASONS",
+            "UNPROCESSABLE_ENTITY",
+            "UNSUPPORTED_MEDIA_TYPE",
+            "UPGRADE_REQUIRED",
+            "URI_TOO_LONG",
+            "USE_PROXY",
+            "VARIANT_ALSO_NEGOTIATES"
+          ]
+        },
+        "view": {
+          "$ref": "#/definitions/View"
+        },
+        "viewName": {
+          "type": "string"
+        }
+      },
+      "title": "ModelAndView"
+    },
+    "PaymentReq": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "format": "float"
+        },
+        "booking": {
+          "$ref": "#/definitions/BookingReq"
+        },
+        "date_of_payment": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "due_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payment_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "receipt_no": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "title": "PaymentReq"
+    },
+    "PaymentRes": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "format": "float"
+        },
+        "booking": {
+          "$ref": "#/definitions/BookingRes"
+        },
+        "date_of_payment": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "due_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payment_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "receipt_no": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "title": "PaymentRes"
+    },
+    "Resident": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "date_of_birth": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "email_id": {
+          "type": "string"
+        },
+        "food_preferences": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "room": {
+          "$ref": "#/definitions/Room"
+        },
+        "user_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "user_name": {
+          "type": "string"
+        }
+      },
+      "title": "Resident"
+    },
+    "Room": {
+      "type": "object",
+      "properties": {
+        "room_no": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "room_type": {
+          "type": "string"
+        },
+        "total_rooms": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "vacancy": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Room"
+    },
+    "Staff": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "date_of_birth": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "email_id": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "room": {
+          "$ref": "#/definitions/Room"
+        },
+        "salary": {
+          "type": "number",
+          "format": "float"
+        },
+        "user_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "user_name": {
+          "type": "string"
+        }
+      },
+      "title": "Staff"
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "date_of_birth": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "email_id": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "room": {
+          "$ref": "#/definitions/Room"
+        },
+        "user_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "user_name": {
+          "type": "string"
+        }
+      },
+      "title": "User"
+    },
+    "View": {
+      "type": "object",
+      "properties": {
+        "contentType": {
+          "type": "string"
+        }
+      },
+      "title": "View"
+    }
+  }
+}
